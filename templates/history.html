@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8"/>
+    <title>查詢歷史紀錄</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-box">
+        <h2>{{ username }} 的查詢紀錄</h2>
+        <p>總共有 {{ history|length }} 筆資料</p>
+        <ul class="history-list">
+            {% for row in history %}
+                <li>查詢城市：{{ row[0] }} | 時間：{{ row[1] }}</li>
+            {% endfor %}
+        </ul>
+        <div style="margin-top: 20px; text-align: center;">
+            <a href="{{ url_for('dashboard', username=username) }}" class="submit">返回</a>
+        </div>
+    </div>
+</body>
+</html>

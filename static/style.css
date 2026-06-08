@@ -1,0 +1,137 @@
+/* 將 body 設定為全螢幕，並用 Flexbox 處理置中 */
+body {
+    margin: 0;
+    /* 改為 min-height，這樣列表長時，頁面會自動長高 */
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    /* 改為 padding-top，讓內容從上方開始排，而不是強制垂直置中 */
+    padding-top: 50px; 
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+}
+
+/* 登入框樣式 */
+.login-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* 讓內容垂直排列 */
+    width: 400px;
+}
+
+/* 調整輸入框間距 */
+.login-box h2 { text-align: center; margin-bottom: 20px; }
+.login-box label { margin: 10px 0 5px; }
+.login-box input { margin-bottom: 10px; padding: 10px; }
+
+.weather-form {
+    background-color: #f9f9f9; /* 淺灰色背景區分 */
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column; /* 讓內容垂直堆疊 */
+    align-items: center;    /* 讓按鈕在水平方向置中 */
+    width: 100%;
+    box-sizing: border-box; /* 確保不溢出 */
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* 重要：防止選單寬度溢出 */
+}
+
+.submit {
+    margin-top: 20px;
+    background-color: #3686e0;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none; /* 這行是關鍵：移除底線 */
+    width: 200px; /* 給一個適中的寬度，或者用 auto 讓它隨文字長度 */
+    margin: 0 auto; /* 這是另一種置中方式，確保左右留白相等 */
+    /* 關鍵：改用 Flexbox 處理文字置中 */
+    display: inline-flex;       /* 改為 inline-flex */
+    justify-content: center;   /* 水平置中 */
+    align-items: center;       /* 垂直置中 */
+    
+    /* 確保文字不會因為選單長度而變形 */
+    white-space: nowrap;
+}
+
+.weather-info-list p {
+    font-size: 1.2em; /* 字體放大為 1.2 倍 */
+    margin: 15px 0;
+    color: #444;
+}
+
+/* 讓數值部分更突出 */
+.weather-info-list strong {
+    color: #3686e0;
+    font-size: 1.1em;
+}
+
+/* history.html 專用樣式 */
+.history-list {
+    list-style: none; /* 移除預設的黑點 */
+    padding: 0;
+    margin: 20px 0;
+}
+
+.history-list li {
+    padding: 12px;
+    border-bottom: 1px solid #eee; /* 每筆紀錄之間加分隔線 */
+    color: #444;
+    font-size: 1em;
+}
+
+.history-list li:hover {
+    background-color: #f9f9f9; /* 滑鼠移過時有輕微反白效果 */
+}
+
+/* 天氣卡片樣式 */
+.weather-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.weather-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.weather-row.highlight {
+    background-color: #e3f2fd; /* 淺藍色凸顯天氣狀況 */
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.label {
+    color: #555;
+    font-weight: 600;
+}
+
+.value {
+    color: #333;
+}
