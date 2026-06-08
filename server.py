@@ -61,7 +61,7 @@ def fetch_weather_api(county_name):
 def index():
     # 改從 session 讀取，保持登入狀態
     username = session.get('username')
-    return render_template("dashboard.html", username=username, history=[], weather_data=None, city=None)
+    return render_template("index.html", username=username, history=[], weather_data=None, city=None)
 
 
 @app.route("/dashboard")
@@ -88,7 +88,7 @@ def dashboard():
         conn.close()
     
     # 3. 最後再一次性回傳給網頁
-    return render_template("dashboard.html", username=username, weather_data=weather_data, city=county)
+    return render_template("index.html", username=username, weather_data=weather_data, city=county)
 
 @app.route("/login", methods=["POST"])
 def login():
